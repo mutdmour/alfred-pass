@@ -7,6 +7,7 @@ import string
 
 
 QUERY = sys.argv[1]
+OPERATION = sys.argv[2]
 HOME = os.environ['HOME']
 PASS_DIR = os.environ.get('PASSWORD_STORE_DIR', os.path.join(HOME, '.password-store/'))
 
@@ -65,7 +66,25 @@ def xmlize_items(items, query):
 </items>
     """ % '\n'.join(items_a)
 
+if (OPERATION == "SEARCH"):
+    items = search_passwords(QUERY)
+    print xmlize_items(items, QUERY)
 
-items = search_passwords(QUERY)
-print xmlize_items(items, QUERY)
-
+elif (OPERATION == "OPTS"):
+    print """
+<?xml version="1.0"?>
+<items>
+    <item uid="username" arg="username" autocomplete="username">
+        <title>Copy Username</title>
+        <subtitle></subtitle>
+    </item>
+    <item uid="password" arg="password" autocomplete="password">
+        <title>Copy Password</title>
+        <subtitle></subtitle>
+    </item>
+    <item uid="URL" arg="URL" autocomplete="URL">
+        <title>Copy URL</title>
+        <subtitle></subtitle>
+    </item>
+</items>
+"""
