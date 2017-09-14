@@ -2,7 +2,8 @@
 
 set -e
 
-QUERY=$1
+KEY=$1
+QUERY=$2
 PATH=/usr/local/bin:$PATH
 
 # GPG agent
@@ -14,5 +15,4 @@ PATH=/usr/local/bin:$PATH
 # fi
 
 # PASS
-#pass show $QUERY | awk 'BEGIN{ORS=""} {print; exit}' | pbcopy
-pass show -c $QUERY
+pass show $QUERY | awk '$1 ~ /^ *'+$KEY+'/'| awk -F': ' '{print $2}' | pbcopy

@@ -10,6 +10,19 @@
 	<dict>
 		<key>06C9C4A9-38CE-441A-8D06-E2F2D8B39B60</key>
 		<array/>
+		<key>27FF7635-61D3-4D79-9F44-B154159F41DA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>06C9C4A9-38CE-441A-8D06-E2F2D8B39B60</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
 		<array>
 			<dict>
@@ -116,7 +129,7 @@
 				<key>script</key>
 				<string>python pass-filter.py "{query}" "OPTS"</string>
 				<key>scriptargtype</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
@@ -141,9 +154,9 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>102</integer>
+				<integer>32</integer>
 				<key>script</key>
-				<string>bash pass-show.sh "{query}"</string>
+				<string>bash pass-show.sh {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -210,9 +223,9 @@
 		<key>06C9C4A9-38CE-441A-8D06-E2F2D8B39B60</key>
 		<dict>
 			<key>xpos</key>
-			<integer>70</integer>
+			<integer>700</integer>
 			<key>ypos</key>
-			<integer>60</integer>
+			<integer>40</integer>
 		</dict>
 		<key>0D9D4DE6-36FF-459E-9457-B3CAD298670C</key>
 		<dict>

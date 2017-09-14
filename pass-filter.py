@@ -34,7 +34,7 @@ def search_passwords(query):
                 break
         else:
             ret.append(password)
-
+            print password
     return ret
 
 
@@ -71,20 +71,21 @@ if (OPERATION == "SEARCH"):
     print xmlize_items(items, QUERY)
 
 elif (OPERATION == "OPTS"):
+    #TODO make more modular and iterative
     print """
 <?xml version="1.0"?>
 <items>
-    <item uid="username" arg="username" autocomplete="username">
+    <item uid="username" arg="username {0}" autocomplete="username">
         <title>Copy Username</title>
         <subtitle></subtitle>
     </item>
-    <item uid="password" arg="password" autocomplete="password">
+    <item uid="password" arg="password {0}" autocomplete="password">
         <title>Copy Password</title>
         <subtitle></subtitle>
     </item>
-    <item uid="URL" arg="URL" autocomplete="URL">
+    <item uid="url" arg="url {0}" autocomplete="url">
         <title>Copy URL</title>
         <subtitle></subtitle>
     </item>
 </items>
-"""
+""".format(QUERY)
